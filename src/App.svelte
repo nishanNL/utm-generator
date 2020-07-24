@@ -30,6 +30,8 @@
 
     substr = substr.substr(0, substr.length - 1);
     url = `${formOptions.subscriptionURL}?${substr}`;
+
+    window.scrollTo(0, document.body.scrollHeight);
   }
 </script>
 
