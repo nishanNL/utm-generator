@@ -1,4 +1,5 @@
 <script>
+  import { tick } from "svelte";
   export let formOptions;
 
   let submitOptions = {
@@ -10,7 +11,7 @@
 
   let url;
 
-  function generateUTMURL(e) {
+  async function generateUTMURL(e) {
     e.preventDefault();
 
     let utmObject = {
@@ -31,6 +32,7 @@
     substr = substr.substr(0, substr.length - 1);
     url = `${formOptions.subscriptionURL}?${substr}`;
 
+    await tick();
     window.scrollTo(0, document.body.scrollHeight);
   }
 </script>
@@ -39,7 +41,6 @@
   main {
     text-align: center;
     padding: 1em;
-    max-width: 240px;
     margin: 0 auto;
   }
 
@@ -63,8 +64,9 @@
     }
   }
   .utm_url {
-    min-width: 300px;
+    min-width: 90%;
     margin-top: 2rem;
+    margin: 0 auto;
   }
 </style>
 
