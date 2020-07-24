@@ -41,7 +41,7 @@
 
   h1 {
     color: #ff3e00;
-    font-size: 2.4em;
+    font-size: 1.2rem;
     font-weight: 100;
   }
 
@@ -63,10 +63,18 @@
     margin-top: 2rem;
     margin: 0 auto;
   }
+
+  h6 {
+    line-height: 1rem;
+  }
 </style>
 
 <main>
   <h1>NL Subscription UTM Generator</h1>
+  <h6>
+    Start typing/editing the content and changes will be reflected automatically
+    in the below URL
+  </h6>
   <form>
     <div class="form-elem">
       <label for="select_source">Select Source</label>
@@ -103,7 +111,7 @@
 
   {#if url}
     <div>
-      <input bind:value={url} class="utm_url" readonly />
+      <textarea bind:value={url} class="utm_url" readonly />
     </div>
   {/if}
 
