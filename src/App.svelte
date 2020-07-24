@@ -105,7 +105,7 @@
       <input id="title" bind:value={submitOptions.title} />
     </div>
 
-    <button on:click={generateUTMURL}>Submit</button>
+    <button on:click={generateUTMURL}>Generate URL</button>
   </form>
 
   {#if url}
