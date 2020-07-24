@@ -5,8 +5,12 @@ const app = new App({
   props: {
     formOptions: {
       subscriptionURL: "https://newslaundry.com/subscription",
-      sources: [{ name: "Youtube", value: "youtube" }],
-      medium: "social",
+      sources: [
+        { name: "Youtube", value: "youtube" },
+        { name: "Instagram", value: "instagram" },
+        { name: "Facebook", value: "facebook" },
+        { name: "Twitter", value: "twitter" },
+      ],
       campaigns: [
         { name: "NL Hafta", value: "hafta" },
         {
