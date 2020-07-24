@@ -11,9 +11,7 @@
 
   let url;
 
-  async function generateUTMURL(e) {
-    e.preventDefault();
-
+  $: {
     let utmObject = {
       utm_campaign: submitOptions.selectedCampaign,
       utm_source: submitOptions.selectedSource,
@@ -31,9 +29,6 @@
 
     substr = substr.substr(0, substr.length - 1);
     url = `${formOptions.subscriptionURL}?${substr}`;
-
-    await tick();
-    window.scrollTo(0, document.body.scrollHeight);
   }
 </script>
 
@@ -104,13 +99,11 @@
       <label for="title">Enter show title (Optional)</label>
       <input id="title" bind:value={submitOptions.title} />
     </div>
-
-    <button on:click={generateUTMURL}>Generate URL</button>
   </form>
 
   {#if url}
     <div>
-      <input bind:value={url} class="utm_url" />
+      <input bind:value={url} class="utm_url" readonly />
     </div>
   {/if}
 
