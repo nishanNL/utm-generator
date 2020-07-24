@@ -83,11 +83,6 @@
     </div>
 
     <div class="form-elem">
-      <label for="title">Enter show title (Optional)</label>
-      <input id="title" bind:value={submitOptions.title} />
-    </div>
-
-    <div class="form-elem">
       <label for="select_campaign">Select Campaign</label>
       <select id="select_campaign" bind:value={submitOptions.selectedCampaign}>
         {#each formOptions.campaigns as campaign}
@@ -104,6 +99,12 @@
         {/each}
       </select>
     </div>
+
+    <div class="form-elem">
+      <label for="title">Enter show title (Optional)</label>
+      <input id="title" bind:value={submitOptions.title} />
+    </div>
+
     <button on:click={generateUTMURL}>Submit</button>
   </form>
 
